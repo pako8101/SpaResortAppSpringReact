@@ -6,21 +6,21 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "procedure_type")
-public class ProcedureType extends BaseEntity {
+public class ProcedureTypeEntity extends BaseEntity {
 
     @Column(unique = true, nullable = false)
     private String name;
     @Column(unique = true, nullable = false)
     private String description;
 
-    public ProcedureType() {
+    public ProcedureTypeEntity() {
     }
 
     public String getName() {
         return name;
     }
 
-    public ProcedureType setName(String name) {
+    public ProcedureTypeEntity setName(String name) {
         this.name = name;
         return this;
     }
@@ -29,7 +29,7 @@ public class ProcedureType extends BaseEntity {
         return description;
     }
 
-    public ProcedureType setDescription(String description) {
+    public ProcedureTypeEntity setDescription(String description) {
         this.description = description;
         return this;
     }

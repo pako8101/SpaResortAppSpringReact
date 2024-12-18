@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "accommodation")
-public class Accommodation extends BaseEntity {
+public class AccommodationEntity extends BaseEntity {
 
     @Column(unique = true, nullable = false)
     private int capacity;
@@ -14,14 +14,14 @@ public class Accommodation extends BaseEntity {
     @Column(unique = true, nullable = false)
     private String name;
 
-    public Accommodation() {
+    public AccommodationEntity() {
     }
 
     public int getCapacity() {
         return capacity;
     }
 
-    public Accommodation setCapacity(int capacity) {
+    public AccommodationEntity setCapacity(int capacity) {
         this.capacity = capacity;
         return this;
     }
@@ -30,7 +30,7 @@ public class Accommodation extends BaseEntity {
         return name;
     }
 
-    public Accommodation setName(String name) {
+    public AccommodationEntity setName(String name) {
         this.name = name;
         return this;
     }

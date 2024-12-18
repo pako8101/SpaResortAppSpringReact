@@ -4,12 +4,11 @@ import jakarta.persistence.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "special_offer")
-public class SpecialOffer extends BaseEntity {
+public class SpecialOfferEntity extends BaseEntity {
 
     @Column(unique = true, nullable = false)
     private BigDecimal discount;
@@ -21,16 +20,16 @@ public class SpecialOffer extends BaseEntity {
 
     @OneToOne
     @JoinColumn(name = "service_id")
-    private Service service;
+    private ServiceEntity serviceEntity;
 
-    public SpecialOffer() {
+    public SpecialOfferEntity() {
     }
 
     public BigDecimal getDiscount() {
         return discount;
     }
 
-    public SpecialOffer setDiscount(BigDecimal discount) {
+    public SpecialOfferEntity setDiscount(BigDecimal discount) {
         this.discount = discount;
         return this;
     }
@@ -39,7 +38,7 @@ public class SpecialOffer extends BaseEntity {
         return startDate;
     }
 
-    public SpecialOffer setStartDate(LocalDateTime startDate) {
+    public SpecialOfferEntity setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
         return this;
     }
@@ -48,17 +47,17 @@ public class SpecialOffer extends BaseEntity {
         return endDate;
     }
 
-    public SpecialOffer setEndDate(LocalDateTime endDate) {
+    public SpecialOfferEntity setEndDate(LocalDateTime endDate) {
         this.endDate = endDate;
         return this;
     }
 
-    public Service getService() {
-        return service;
+    public ServiceEntity getService() {
+        return serviceEntity;
     }
 
-    public SpecialOffer setService(Service service) {
-        this.service = service;
+    public SpecialOfferEntity setService(ServiceEntity serviceEntity) {
+        this.serviceEntity = serviceEntity;
         return this;
     }
 }

@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "room_booking")
-public class RoomBooking extends BaseEntity{
+public class RoomBookingEntity extends BaseEntity{
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime startDate;
@@ -16,19 +16,19 @@ public class RoomBooking extends BaseEntity{
 
     @ManyToOne
     @JoinColumn(name = "accommodation_id")
-    private Accommodation accommodation;
+    private AccommodationEntity accommodationEntity;
 
     @Column(unique = true, nullable = false)
     private String customerName;
 
-    public RoomBooking() {
+    public RoomBookingEntity() {
     }
 
     public LocalDateTime getStartDate() {
         return startDate;
     }
 
-    public RoomBooking setStartDate(LocalDateTime startDate) {
+    public RoomBookingEntity setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
         return this;
     }
@@ -37,17 +37,17 @@ public class RoomBooking extends BaseEntity{
         return endDate;
     }
 
-    public RoomBooking setEndDate(LocalDateTime endDate) {
+    public RoomBookingEntity setEndDate(LocalDateTime endDate) {
         this.endDate = endDate;
         return this;
     }
 
-    public Accommodation getAccommodation() {
-        return accommodation;
+    public AccommodationEntity getAccommodation() {
+        return accommodationEntity;
     }
 
-    public RoomBooking setAccommodation(Accommodation accommodation) {
-        this.accommodation = accommodation;
+    public RoomBookingEntity setAccommodation(AccommodationEntity accommodationEntity) {
+        this.accommodationEntity = accommodationEntity;
         return this;
     }
 
@@ -55,7 +55,7 @@ public class RoomBooking extends BaseEntity{
         return customerName;
     }
 
-    public RoomBooking setCustomerName(String customerName) {
+    public RoomBookingEntity setCustomerName(String customerName) {
         this.customerName = customerName;
         return this;
     }

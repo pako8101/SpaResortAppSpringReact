@@ -3,7 +3,7 @@ package com.kamenov.sparesortappspringreact.models.entity;
 import jakarta.persistence.*;
 
 @Entity
-public class Service extends BaseEntity {
+public class ServiceEntity extends BaseEntity {
     @Column(nullable = false, unique = true)
     private String name;
 @Column(nullable = false,columnDefinition = "TEXT")
@@ -12,16 +12,16 @@ public class Service extends BaseEntity {
     @OneToOne(mappedBy = "service",
             cascade = CascadeType.ALL,
     fetch = FetchType.EAGER)
-    private SpecialOffer specialOffer;
+    private SpecialOfferEntity specialOfferEntity;
 
-    public Service() {
+    public ServiceEntity() {
     }
 
     public String getName() {
         return name;
     }
 
-    public Service setName(String name) {
+    public ServiceEntity setName(String name) {
         this.name = name;
         return this;
     }
@@ -30,17 +30,17 @@ public class Service extends BaseEntity {
         return description;
     }
 
-    public Service setDescription(String description) {
+    public ServiceEntity setDescription(String description) {
         this.description = description;
         return this;
     }
 
-    public SpecialOffer getSpecialOffer() {
-        return specialOffer;
+    public SpecialOfferEntity getSpecialOffer() {
+        return specialOfferEntity;
     }
 
-    public Service setSpecialOffer(SpecialOffer specialOffer) {
-        this.specialOffer = specialOffer;
+    public ServiceEntity setSpecialOffer(SpecialOfferEntity specialOfferEntity) {
+        this.specialOfferEntity = specialOfferEntity;
         return this;
     }
 }
