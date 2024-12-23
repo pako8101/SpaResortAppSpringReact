@@ -1,8 +1,7 @@
 package com.kamenov.sparesortappspringreact.models.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import com.kamenov.sparesortappspringreact.models.enums.ProcedureEnumType;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "procedure_type")
@@ -13,7 +12,20 @@ public class ProcedureTypeEntity extends BaseEntity {
     @Column(unique = true, nullable = false)
     private String description;
 
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private ProcedureEnumType procedureType;
+
     public ProcedureTypeEntity() {
+    }
+
+    public ProcedureEnumType getProcedureType() {
+        return procedureType;
+    }
+
+    public ProcedureTypeEntity setProcedureType(ProcedureEnumType procedureType) {
+        this.procedureType = procedureType;
+        return this;
     }
 
     public String getName() {

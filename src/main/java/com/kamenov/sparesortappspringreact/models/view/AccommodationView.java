@@ -4,8 +4,17 @@ public class AccommodationView {
 
     private String name;
     private int capacity;
-
+    private double pricePerNight;
     public AccommodationView() {
+    }
+
+    public double getPricePerNight() {
+        return pricePerNight;
+    }
+
+    public AccommodationView setPricePerNight(double pricePerNight) {
+        this.pricePerNight = pricePerNight;
+        return this;
     }
 
     public String getName() {
